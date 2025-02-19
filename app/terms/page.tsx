@@ -12,191 +12,95 @@ export default function Terms() {
           <ArrowLeftIcon className="w-4 h-4" />
           Back to Chatbot
         </Link>
-        <h1 className="text-3xl font-bold">Personal AI Chatbot</h1>
-        <h2 className="text-2xl font-semibold">Terms of Use and Disclaimer</h2>
-
-        <p className="text-gray-700">
-          The following terms govern your access to and use of this AI chatbot,
-          a personal artificial intelligence tool provided for your convenience.
-          By using the chatbot, you agree to these terms. If you do not agree,
-          please refrain from using the service.
-        </p>
-
-        <div className="space-y-4">
-          <h3 className="text-xl font-semibold">General Information</h3>
-          <ol className="list-decimal list-inside space-y-3">
-            <li className="text-gray-700">
-              <span className="font-semibold">Service and Purpose:</span> This
-              chatbot is designed to assist users with a range of inquiries and
-              tasks. It is offered for personal use and is not guaranteed to
-              produce accurate or complete results.
-            </li>
-            <li className="text-gray-700">
-              <span className="font-semibold">Third-Party Involvement:</span>{" "}
-              The chatbot may rely on third-party services to function.
-              Accordingly, your inputs might be processed or stored by external
-              systems, and complete confidentiality and security cannot be
-              assured.
-            </li>
-            <li className="text-gray-700">
-              <span className="font-semibold">No Guarantee of Accuracy:</span>{" "}
-              While efforts are made to offer helpful responses, the chatbot may
-              occasionally generate inaccurate, incomplete, or outdated content.
-              You are encouraged to verify any information independently.
-            </li>
-          </ol>
-        </div>
-
-        <div className="space-y-4">
-          <h3 className="text-xl font-semibold">Liability</h3>
-          <ol className="list-decimal list-inside space-y-3">
-            <li className="text-gray-700">
-              <span className="font-semibold">Use at Your Own Risk:</span> The
-              AI chatbot is provided on an "as-is" and "as-available" basis. To
-              the fullest extent permitted by law:
-              <ul className="list-disc list-inside ml-6 mt-2 space-y-2">
-                <li>
-                  All warranties, express or implied, including those of
-                  merchantability or fitness for a particular purpose, are
-                  disclaimed.
-                </li>
-                <li>
-                  The owner is not liable for any errors, inaccuracies, or
-                  omissions in the information provided.
-                </li>
-              </ul>
-            </li>
-            <li className="text-gray-700">
-              <span className="font-semibold">No Liability for Damages:</span>{" "}
-              Under no circumstance shall the owner or associated parties be
-              liable for any direct, indirect, incidental, consequential, or
-              punitive damages arising from your use of the chatbot.
-            </li>
-            <li className="text-gray-700">
-              <span className="font-semibold">
-                Modification or Discontinuation:
-              </span>{" "}
-              The owner reserves the right to modify, suspend, or discontinue
-              the chatbot’s functionalities at any time without prior notice.
-            </li>
-            <li className="text-gray-700">
-              <span className="font-semibold">Future Fees:</span> Although the
-              chatbot is currently available free of charge, the owner may, in
-              the future, institute fees for its use.
-            </li>
-          </ol>
-        </div>
-
-        <div className="space-y-4">
-          <h3 className="text-xl font-semibold">User Responsibilities</h3>
-          <ol className="list-decimal list-inside space-y-3">
-            <li className="text-gray-700">
-              <span className="font-semibold">Eligibility:</span> Use of the
-              chatbot is restricted to individuals aged 18 or older.
-            </li>
-            <li className="text-gray-700">
-              <span className="font-semibold">Prohibited Conduct:</span> By
-              using the chatbot, you agree not to:
-              <ul className="list-disc list-inside ml-6 mt-2 space-y-2">
-                <li>
-                  Transmit or post content that is defamatory, offensive,
-                  threatening, or otherwise inappropriate.
-                </li>
-                <li>
-                  Engage in any unlawful or unethical activities using the
-                  chatbot.
-                </li>
-                <li>
-                  Attempt to compromise the security or functionality of the
-                  service.
-                </li>
-                <li>
-                  Reverse engineer, copy, or extract the underlying code or
-                  structure of the chatbot without authorization.
-                </li>
-              </ul>
-            </li>
-          </ol>
-        </div>
-
-        <div className="space-y-4">
-          <h3 className="text-xl font-semibold">Data Privacy and Security</h3>
-          <ol className="list-decimal list-inside space-y-3">
-            <li className="text-gray-700">
-              <span className="font-semibold">No Privacy Guarantee:</span> This
-              AI chatbot does not guarantee complete privacy or security. Your
-              interactions may be recorded or processed to improve the service.
-            </li>
-            <li className="text-gray-700">
-              <span className="font-semibold">Public Nature of Data:</span>{" "}
-              Information you provide through the chatbot may not remain
-              confidential.
-            </li>
-            <li className="text-gray-700">
-              <span className="font-semibold">Data Transmission:</span> Inputs
-              to the chatbot may be transmitted and processed by external
-              third-party services.
-            </li>
-          </ol>
-        </div>
-
-        <div className="space-y-4">
-          <h3 className="text-xl font-semibold">Content Ownership and Use</h3>
-          <ol className="list-decimal list-inside space-y-3">
-            <li className="text-gray-700">
-              <span className="font-semibold">Submission License:</span> By
-              using the chatbot, you grant the owner a non-exclusive,
-              irrevocable, worldwide, royalty-free license to use, modify, and
-              distribute any content you provide.
-            </li>
-            <li className="text-gray-700">
-              <span className="font-semibold">Improvement and Research:</span>{" "}
-              The owner reserves the right to use both your submissions and the
-              generated outputs to enhance the chatbot’s functionality,
-              including for research or commercial purposes.
-            </li>
-            <li className="text-gray-700">
-              <span className="font-semibold">No Claim to Benefits:</span> You
-              agree that you have no right to any profits or benefits that might
-              arise from the use or distribution of your provided content.
-            </li>
-          </ol>
-        </div>
-
-        <div className="space-y-4">
-          <h3 className="text-xl font-semibold">Indemnification</h3>
-          <p className="text-gray-700">
-            By using the chatbot, you agree to indemnify and hold harmless the
-            owner and any related parties from any claims, damages, losses, or
-            liabilities arising out of your use of the service or breach of
-            these terms.
-          </p>
-        </div>
-
-        <div className="space-y-4">
-          <h3 className="text-xl font-semibold">
-            Governing Law and Jurisdiction
-          </h3>
-          <p className="text-gray-700">
-            These terms are governed by and construed in accordance with
-            applicable laws. Any disputes arising in connection with these terms
-            shall be subject to the exclusive jurisdiction of the appropriate
-            courts.
-          </p>
-        </div>
-
-        <div className="space-y-4">
-          <h3 className="text-xl font-semibold">Acceptance of Terms</h3>
-          <p className="text-gray-700">
-            By using the AI chatbot, you confirm that you have read, understood,
-            and agreed to these Terms of Use and Disclaimer. If you do not agree
-            with any part of these terms, please discontinue use of the chatbot.
-          </p>
-        </div>
-
-        <div className="mt-8 text-sm text-gray-600">
-          <p>Last Updated: January 22, 2025</p>
-        </div>
+        <h1 className="text-3xl font-bold">AI Chatbot</h1>
+        <h2 className="text-2xl font-semibold">
+          Terms of Use and Disclaimer for AI Chatbot
+        </h2>
+        <ol className="list-decimal list-inside space-y-4">
+          <li className="text-gray-700">
+            <span className="font-semibold">Acceptance of Terms:</span> By
+            accessing and using the AI chatbot ("Chatbot") provided by Ramsy
+            ("Provider"), you acknowledge that you have read, understood, and
+            agreed to be bound by these Terms of Use. If you do not agree with
+            these terms, do not use the Chatbot.
+          </li>
+          <li className="text-gray-700">
+            <span className="font-semibold">No Warranties:</span> The Chatbot is
+            provided "as is" and "as available" without any warranties, express
+            or implied. Ramsy makes no representations or warranties regarding
+            the accuracy, reliability, completeness, or suitability of the
+            Chatbot for any purpose. To the fullest extent permitted by law, all
+            warranties, including but not limited to implied warranties of
+            merchantability, fitness for a particular purpose, and
+            non-infringement, are expressly disclaimed.
+          </li>
+          <li className="text-gray-700">
+            <span className="font-semibold">
+              No Guarantees on Availability or Support:
+            </span>{" "}
+            Ramsy does not guarantee that the Chatbot will be available at all
+            times, be uninterrupted, secure, or error-free. No technical
+            support, maintenance, or updates are guaranteed or required to be
+            provided.
+          </li>
+          <li className="text-gray-700">
+            <span className="font-semibold">Limitation of Liability:</span> To
+            the fullest extent permitted by applicable law, Ramsy shall not be
+            liable for any direct, indirect, incidental, consequential, special,
+            exemplary, or punitive damages arising from or related to your use
+            of or inability to use the Chatbot. This includes but is not limited
+            to loss of profits, data, business, or any other losses, even if
+            Ramsy has been advised of the possibility of such damages.
+          </li>
+          <li className="text-gray-700">
+            <span className="font-semibold">
+              No Legal, Financial, or Professional Advice:
+            </span>{" "}
+            The Chatbot is intended for informational and general purposes only.
+            It does not constitute legal, financial, medical, or professional
+            advice. Any reliance on the information provided by the Chatbot is
+            at your own risk.
+          </li>
+          <li className="text-gray-700">
+            <span className="font-semibold">User Responsibility:</span> You are
+            solely responsible for your use of the Chatbot and any actions or
+            decisions made based on its output. Ramsy is not responsible for any
+            consequences resulting from the use or misuse of the Chatbot.
+          </li>
+          <li className="text-gray-700">
+            <span className="font-semibold">Data Security and Privacy:</span>{" "}
+            You acknowledge that any data transmitted to or through the Chatbot
+            is not secured and may be processed by third parties. Do not upload,
+            share, or transmit any sensitive, confidential, or personal
+            information. All conversations conducted through the Chatbot are
+            considered equivalent to public postings, and Ramsy does not
+            guarantee the confidentiality or security of any data shared.
+          </li>
+          <li className="text-gray-700">
+            <span className="font-semibold">Indemnification:</span> You agree to
+            indemnify, defend, and hold harmless Ramsy from any claims,
+            liabilities, damages, losses, and expenses, including reasonable
+            legal fees, arising from your use of the Chatbot or violation of
+            these Terms of Use.
+          </li>
+          <li className="text-gray-700">
+            <span className="font-semibold">Modifications to Terms:</span> Ramsy
+            reserves the right to modify these Terms of Use at any time without
+            prior notice. Continued use of the Chatbot constitutes acceptance of
+            the modified terms.
+          </li>
+          <li className="text-gray-700">
+            <span className="font-semibold">Governing Law:</span> These Terms of
+            Use shall be governed by and construed in accordance with the laws
+            of the applicable jurisdiction without regard to its conflict of law
+            provisions.
+          </li>
+          <li className="text-gray-700">
+            <span className="font-semibold">Contact Information:</span> If you
+            have any questions or concerns regarding these Terms of Use, please
+            contact Ramsy at [insert contact information].
+          </li>
+        </ol>
       </div>
     </div>
   );
