@@ -71,3 +71,14 @@ export function HYDE_PROMPT(chat: Chat) {
     .join("\n")}
   `;
 }
+export function RESPOND_TO_QUESTION_BACKUP_SYSTEM_PROMPT() {
+  return `
+${IDENTITY_STATEMENT} ${OWNER_STATEMENT} ${OWNER_DESCRIPTION} ${AI_ROLE}
+
+You couldn't perform a proper search for the user's question, but still answer the question starting with:
+"Although I do not have contemporary data to answer this question, I have some knowledge about it"  
+then proceed to answer the question based on your knowledge of ${OWNER_NAME}.
+
+Now respond to the user's message:
+  `;
+}
