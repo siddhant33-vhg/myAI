@@ -63,6 +63,12 @@ export async function generateHypotheticalData(
   openai: OpenAI
 ): Promise<string> {
   try {
+    console.log(
+      "Generating hypothetical data...",
+      HYDE_MODEL,
+      HYDE_TEMPERATURE,
+      HYDE_PROMPT(chat)
+    );
     const response = await openai.chat.completions.create({
       model: HYDE_MODEL,
       temperature: HYDE_TEMPERATURE,
@@ -77,6 +83,7 @@ export async function generateHypotheticalData(
 
     return response.choices[0].message.content ?? "";
   } catch (error) {
+    console.error("Error generating hypothetical data:", error);
     throw new Error("Error generating hypothetical data");
   }
 }

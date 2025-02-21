@@ -200,6 +200,7 @@ export class ResponseModule {
             temperature: QUESTION_RESPONSE_TEMPERATURE,
           });
         } catch (error: any) {
+          console.error("Error in respondToQuestion:", error);
           queueError({
             controller,
             error_message: error.message ?? DEFAULT_RESPONSE_MESSAGE,

@@ -37,7 +37,21 @@ export async function handleOpenAIStream({
   let client: OpenAI = providers.openai;
   if (providerName === "fireworks") {
     client = providers.fireworks;
+    console.log("Streaming Fireworks response...", {
+      temperature,
+      model_name,
+      systemPrompt,
+      messages,
+    });
+  } else {
+    console.log("Streaming OpenAI response...", {
+      temperature,
+      model_name,
+      systemPrompt,
+      messages,
+    });
   }
+  const startTime = Date.now();
   const streamedResponse = await client.chat.completions.create({
     model: model_name,
     messages: [{ role: "system", content: systemPrompt }, ...messages],
@@ -63,6 +77,9 @@ export async function handleOpenAIStream({
       new TextEncoder().encode(JSON.stringify(streamedMessage) + "\n")
     );
   }
+  const endTime = Date.now();
+  const streamDuration = endTime - startTime;
+  console.log(`Done streaming OpenAI response in ${streamDuration / 1000}s`);
   const donePayload: StreamedDone = {
     type: "done",
     final_message: responseBuffer,
@@ -90,6 +107,12 @@ export async function handleAnthropicStream({
     })
   );
   let responseBuffer: string = "";
+  console.log("Streaming Anthropic response...", {
+    temperature,
+    model_name,
+    systemPrompt,
+    messages,
+  });
   await anthropicClient.messages
     .stream({
       messages: anthropicMessages,
