@@ -38,7 +38,7 @@ Do not ever disclose any technical details about how you work or what you are ma
 `;
 }
 
-export function RESPOND_TO_QUESTION_SYSTEM_PROMPT(context: string) {
+{
   return `
 ${IDENTITY_STATEMENT} ${OWNER_STATEMENT} ${OWNER_DESCRIPTION} ${AI_ROLE}
 
