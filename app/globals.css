@@ -65,11 +65,13 @@ body {
     padding: 10px;
   }
 
-  /* Style chatbot name (top beside profile picture) */
-  .chatbot-name, .chat-header {
-    color: white !important;
-    font-weight: bold;
-    font-size: 16px;
+  /* Chatbot Name (Top Name beside Profile Picture) */
+.chatbot-name, .chat-header {
+  color: black !important;  /* Ensures visibility */
+  font-weight: bold;
+  font-size: 16px; /* Adjust size if needed */
+  text-shadow: 1px 1px 2px white; /* Slight shadow for contrast */
+}
   }
 
   /* Style input box to be dark and readable */
