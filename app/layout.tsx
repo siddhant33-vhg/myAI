@@ -33,7 +33,19 @@ export default function RootLayout({
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
-          <ErrorWrapper>{children}</ErrorWrapper>
+          {/* Chatbot Header */}
+          <div className="chatbot-header">
+            <img
+              src="/profile-image.png" 
+              alt="Chatbot Profile"
+              className="chatbot-avatar"
+            />
+            <span className="chatbot-name">SynthAI</span>
+          </div>
+
+          <main>
+            <ErrorWrapper>{children}</ErrorWrapper>
+          </main>
         </body>
       </TooltipProvider>
     </html>
