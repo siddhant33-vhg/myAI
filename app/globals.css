@@ -46,7 +46,7 @@ body {
 
 /* Chatbot Name (Top Name beside Profile Picture) */
 .chatbot-name {
-  color: white !important;
+  color: black !important;
   font-weight: bold;
 
   }
