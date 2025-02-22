@@ -88,10 +88,25 @@ body {
 }
   /* Make chat bubbles dark */
 .chat-bubble {
-  background-color: #222 !important; /* Dark gray */
+  background-color: #111 !important; /* Dark gray */
   color: white !important; /* White text */
   border-radius: 10px;
   padding: 10px;
+}
+  /* User Chat Bubble */
+.user-message {
+  background-color: #0033aa !important; /* Darker blue */
+  color: white !important;
+  font-weight: bold;
+}
+  /* Make Placeholder Text More Visible */
+input::placeholder, textarea::placeholder {
+  color: #bbb !important; /* Lighter gray for contrast */
+}
+  /* Chatbot Name (Top Name beside Profile Picture) */
+.chatbot-name, .chat-header {
+  color: white !important;
+  font-weight: bold;
 }
 
 /* Ensure user's message bubble is visible */
