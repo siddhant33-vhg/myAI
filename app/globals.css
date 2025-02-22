@@ -76,10 +76,25 @@ body {
   background-color: black !important;
   color: white !important;
 }
-  .chat-bubble {
+  /* Make chat bubbles dark */
+.chat-bubble {
   background-color: #222 !important; /* Dark gray */
+  color: white !important; /* White text */
+  border-radius: 10px;
+  padding: 10px;
+}
+
+/* Ensure user's message bubble is visible */
+.user-message {
+  background-color: #0044cc !important; /* Dark blue */
   color: white !important;
-  border-radius: 8px;
+}
+
+/* Ensure input field is visible */
+input, textarea {
+  background-color: #333 !important;
+  color: white !important;
+  border: 1px solid #555;
 }
   
 }
