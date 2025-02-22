@@ -38,12 +38,4 @@ export default function RootLayout({
       </TooltipProvider>
     </html>
   );
-
-  <html lang="en">
-  <body className="dark">
-    <div className="min-h-screen bg-black text-white">
-      <YourChatComponent />
-    </div>
-  </body>
-</html>
 }
