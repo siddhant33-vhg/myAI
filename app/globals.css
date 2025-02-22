@@ -38,10 +38,17 @@ body {
 
 /* Ensure chatbot name is visible */
 .chatbot-name {
-  color: black !important;
+  color: white !important; /* Set to white to ensure visibility */
   font-weight: bold;
-  font-size: 16px;
-  text-shadow: 2px 2px 4px white; /* Adds shadow for visibility */
+  font-size: 18px;
+  text-shadow: 2px 2px 4px black !important; /* Adds shadow for contrast */
+  background-color: transparent !important;
+  padding: 4px 8px;
+  display: inline-block;
+}
+
+.chatbot-container {
+  background-color: transparent !important;
 }
 
 /* Chat interface background */
