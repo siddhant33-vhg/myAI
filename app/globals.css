@@ -96,7 +96,7 @@ body {
   /* User Chat Bubble */
 .user-message {
   background-color: #0044cc !important; /* Darker blue */
-  color: white !important;
+  color: black !important;
   font-weight: bold;
 }
   /* Make Placeholder Text More Visible */
@@ -112,7 +112,7 @@ input::placeholder, textarea::placeholder {
 /* Ensure user's message bubble is visible */
 .user-message {
   background-color: #0044cc !important; /* Dark blue */
-  color: white !important;
+  color: black !important;
 }
 
 /* Ensure input field is visible */
