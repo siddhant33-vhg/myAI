@@ -20,10 +20,24 @@ body, html {
   color: white !important;
 }
 
+/* Footer content */
+.footer-content {
+  position: fixed !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  padding: 8px 16px !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  background-color: black !important;
+  z-index: 10 !important;
+}
+
 /* Chat input section */
 .chat-input-container {
   position: fixed !important;
-  bottom: 0 !important;
+  bottom: 32px !important; /* Added space for footer */
   left: 0 !important;
   right: 0 !important;
   background-color: black !important;
@@ -34,9 +48,10 @@ body, html {
   width: 100% !important;
   border: none !important;
   box-shadow: none !important;
+  z-index: 20 !important; /* Ensure input is above footer */
 }
 
-/* Input styling with proper text spacing */
+/* Input styling */
 .chat-input {
   width: 90% !important;
   max-width: 800px !important;
@@ -45,48 +60,35 @@ body, html {
   background-color: #111 !important;
   color: white !important;
   border: 1px solid #333 !important;
-  border-radius: 22px !important; /* Matched to the screenshot */
+  border-radius: 22px !important;
   outline: none !important;
   font-size: 16px !important;
-  line-height: 24px !important; /* Added to ensure text doesn't overlap */
-  text-overflow: ellipsis !important; /* Prevents text from overflowing */
-  white-space: nowrap !important; /* Keeps text on one line */
+  line-height: 24px !important;
 }
 
-/* Fix placeholder text */
+/* Placeholder styling */
 .chat-input::placeholder {
   color: rgba(255, 255, 255, 0.7) !important;
   line-height: 24px !important;
-  vertical-align: middle !important;
-  overflow: hidden !important;
-  text-overflow: ellipsis !important;
-  white-space: nowrap !important;
 }
 
+/* Focus state */
 .chat-input:focus {
   border-color: #444 !important;
   background-color: #111 !important;
+}
+
+/* Main chat container needs padding at bottom */
+.chat-container {
+  padding-bottom: 100px !important; /* Space for input and footer */
 }
 
 /* Keep footer black */
 .footer {
   background-color: black !important;
   color: white !important;
-}
-
-/* Remove any conflicting styles */
-.input-container,
-.chatbox-container,
-.chat-wrapper,
-.chatbox-wrapper {
-  all: unset !important;
-  background-color: black !important;
-}
-
-/* Additional fixes for specific elements */
-.ask-question-placeholder {
-  color: white !important;
-  opacity: 1 !important;
+  position: relative !important;
+  z-index: 10 !important;
 }
 
 /* Message styling */
