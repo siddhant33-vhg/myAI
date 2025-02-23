@@ -101,3 +101,38 @@ input::placeholder, textarea::placeholder {
   background-color: black !important;
   color: white !important;
 }
+
+/* Fix input box styling */
+.chat-input-container {
+  background-color: black !important;
+  border: none !important;
+  box-shadow: none !important;
+  width: 100% !important;
+  padding: 10px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* Ensure input box blends in */
+.chat-input-container input {
+  background-color: #111 !important; /* Slightly dark to blend */
+  color: white !important;
+  border-radius: 10px !important;
+  border: 1px solid #222 !important;
+  width: 95% !important;
+  padding: 12px !important;
+  outline: none !important;
+}
+
+/* Remove any extra border or shadow */
+.chat-input-container input:focus {
+  border: 1px solid #444 !important;
+  box-shadow: none !important;
+}
+
+/* Fix footer spacing */
+.footer {
+  background-color: black !important;
+  padding-bottom: 10px !important;
+}
