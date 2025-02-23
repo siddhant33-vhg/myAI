@@ -136,3 +136,21 @@ input::placeholder, textarea::placeholder {
   background-color: black !important;
   padding-bottom: 10px !important;
 }
+
+/* Chat Input Box - Remove Border and Shadow */
+input[type="text"], textarea {
+  background-color: black !important;
+  color: white !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  padding: 10px;
+  border-radius: 20px; /* Optional: To match rounded aesthetic */
+}
+
+/* Chat Input Container - Ensure Full Black Background */
+.chat-input-container {
+  background-color: black !important;
+  border: none !important;
+  box-shadow: none !important;
+}
