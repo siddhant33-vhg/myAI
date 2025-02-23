@@ -1,25 +1,79 @@
-"use client";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-import { Inter } from "next/font/google";
-import "./globals.css";
+html, 
+body,
+#__next,
+main {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  min-height: 100vh !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow-x: hidden !important;
+}
 
-const inter = Inter({ subsets: ["latin"] });
+* {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  return (
-    <html lang="en">
-      <body 
-        className={`${inter.className} bg-black min-h-screen m-0 p-0`}
-        style={{ backgroundColor: 'black' }}
-      >
-        <div className="min-h-screen bg-black">
-          {children}
-        </div>
-      </body>
-    </html>
-  );
+.chat-container {
+  background-color: #000000 !important;
+  min-height: 100vh !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.chat-input-container {
+  background-color: #000000 !important;
+  border: none !important;
+  box-shadow: none !important;
+  position: fixed !important;
+  bottom: 0 !important;
+  width: 100% !important;
+  padding: 16px !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.chat-input {
+  width: 90% !important;
+  max-width: 800px !important;
+  height: 44px !important;
+  padding: 8px 16px !important;
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  border: 1px solid #333333 !important;
+  border-radius: 22px !important;
+  outline: none !important;
+  font-size: 16px !important;
+}
+
+.chat-bubble {
+  background-color: #000000 !important;
+  border: 1px solid #333333 !important;
+  border-radius: 10px !important;
+  padding: 10px !important;
+}
+
+.footer {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  position: fixed !important;
+  bottom: 0 !important;
+  width: 100% !important;
+  padding: 8px !important;
+  text-align: center !important;
+}
+
+.bg-white {
+  background-color: #000000 !important;
+}
+
+[class*="shadow"] {
+  box-shadow: none !important;
 }
