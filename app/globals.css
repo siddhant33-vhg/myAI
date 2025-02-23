@@ -6,85 +6,35 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+/* Make chatbot name visible */
+.chatbot-name {
+  color: white !important; /* Ensure it is white */
+  font-weight: bold;
+  font-size: 20px; /* Make it bigger */
+  text-shadow: 2px 2px 5px black, -2px -2px 5px black; /* Adds a black shadow for contrast */
+  background-color: rgba(0, 0, 0, 0.6); /* Slight dark background for better visibility */
+  padding: 6px 10px;
+  border-radius: 8px;
+  display: inline-block;
 }
 
-@layer base {
-  :root {
-    --background: 0 0% 0%;
-    --foreground: 0 0% 98%;
-    --card: 0 0% 0%;
-    --card-foreground: 0 0% 98%;
-    --popover: 0 0% 0%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 9%;
-    --secondary: 0 0% 14.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 63.9%;
-    --accent: 0 0% 14.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 14.9%;
-    --input: 0 0% 14.9%;
-    --ring: 0 0% 83.1%;
-  }
+/* Ensure chatbot header is styled */
+.chatbot-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
 }
 
-/* Chat Interface Background */
+/* Chat interface background */
 body {
   background-color: black !important;
   color: white !important;
 }
 
-/* Ensure chatbot name is visible */
-.chatbot-name {
-  color: white !important; /* Set to white to ensure visibility */
-  font-weight: bold;
-  font-size: 18px;
-  text-shadow: 2px 2px 4px black !important; /* Adds shadow for contrast */
-  background-color: transparent !important;
-  padding: 4px 8px;
-  display: inline-block;
-}
-
-/* Chatbot Header (Fixing the "SynthAI" name issue) */
-.chat-header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  position: absolute;
-  top: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-/* Chatbot Avatar */
-.chatbot-avatar {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  border: 2px solid white;
-}
-
-/* Chatbot Name Container */
-.chatbot-container {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  background-color: transparent !important;
-  padding: 8px;
-}
-
 /* Chatbot Response Bubble */
 .chat-bubble {
-  background-color: #111 !important; /* Dark gray */
+  background-color: black !important; /* Fully black response bubble */
   color: white !important; /* White text for contrast */
   border-radius: 10px;
   padding: 10px;
@@ -110,36 +60,12 @@ input, textarea {
 
 /* Placeholder Text */
 input::placeholder, textarea::placeholder {
-  color: #aaa !important; /* Light gray for contrast */
+  color: #ddd !important; /* Lighter gray for better visibility */
+  opacity: 1;
 }
 
-/* Ensure chatbot name is visible */
-.chatbot-name {
-  color: white !important;  /* Ensures visibility */
-  font-weight: bold;
-  font-size: 18px;
-  text-shadow: 2px 2px 4px black !important; /* Adds shadow for contrast */
-  background-color: transparent !important;
-  padding: 4px 8px;
-  display: inline-block;
-}
-
-/* Ensure chatbot header is centered */
-.chatbot-header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  position: absolute;
-  top: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-/* Chatbot Avatar */
-.chatbot-avatar {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  border: 2px solid white;
+/* Fix for "Ask a question to start the conversation" text */
+.ask-question-placeholder {
+  color: white !important; /* Ensures placeholder text is visible */
+  opacity: 0.8;
 }
