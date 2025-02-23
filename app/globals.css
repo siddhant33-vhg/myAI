@@ -1,129 +1,61 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-/* Ensure black background everywhere */
-html, 
-body, 
-#root,
-#__next,
-main,
-.chat-container,
-.app-container {
-  background-color: black !important;
-  color: white !important;
-  min-height: 100vh !important;
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-/* Remove any gradients or background variations */
-* {
-  background-color: black !important;
-}
-
-/* Chat container specific styles */
-.chat-container {
-  display: flex !important;
-  flex-direction: column !important;
-  min-height: 100vh !important;
-  width: 100% !important;
-  padding-bottom: 100px !important;
-}
-
-/* Message bubbles */
-.chat-bubble {
-  background-color: black !important;
-  color: white !important;
-  border-radius: 10px !important;
-  padding: 10px !important;
-  border: 1px solid #444 !important;
-}
-
-.user-message {
-  background-color: #0044cc !important;
-  color: white !important;
-  font-weight: bold !important;
-  border-radius: 10px !important;
-  padding: 10px !important;
-}
-
-/* Input container */
-.chat-input-container {
-  position: fixed !important;
-  bottom: 32px !important;
-  left: 0 !important;
-  right: 0 !important;
-  background-color: black !important;
-  padding: 16px !important;
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
-  width: 100% !important;
-  border: none !important;
-  box-shadow: none !important;
-  z-index: 20 !important;
-}
-
-/* Single input field */
-.chat-input-container input:first-of-type {
-  display: block !important;
-  width: 90% !important;
-  max-width: 800px !important;
-  height: 44px !important;
-  padding: 8px 16px !important;
-  background-color: #111 !important;
-  color: white !important;
-  border: 1px solid #333 !important;
-  border-radius: 22px !important;
-  outline: none !important;
-  font-size: 16px !important;
-  line-height: 24px !important;
-}
-
-/* Placeholder text */
-.chat-input-container input:first-of-type::placeholder {
-  color: rgba(255, 255, 255, 0.7) !important;
-  line-height: 24px !important;
-}
-
-/* Footer content */
-.footer-content {
-  position: fixed !important;
-  bottom: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
-  padding: 8px 16px !important;
-  display: flex !important;
-  justify-content: space-between !important;
-  align-items: center !important;
-  background-color: black !important;
-  z-index: 10 !important;
-}
-
-/* Hide duplicate elements */
-.input-container,
-.chatbox-container,
-.chat-wrapper,
-.chatbox-wrapper {
+/* First, reset all input fields to prevent duplicates */
+input,
+textarea,
+.chat-input,
+.message-input,
+[type="text"] {
   display: none !important;
 }
 
-/* Ensure no gradients in the interface */
-.gradient,
-.gradient-bg,
-[class*="gradient"] {
-  background: black !important;
-  background-image: none !important;
+/* Style only the main input container */
+.chat-input-container {
+  position: fixed !important;
+  bottom: 32px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: 90% !important;
+  max-width: 800px !important;
+  background: transparent !important;
+  z-index: 1000 !important;
 }
 
-/* Fix any potential white borders or edges */
-* {
-  border-color: #333 !important;
+/* Style the single primary input */
+.chat-input-container > input:first-of-type {
+  display: block !important;
+  width: 100% !important;
+  height: 44px !important;
+  padding: 8px 16px !important;
+  background-color: rgba(0, 0, 0, 0.8) !important;
+  color: white !important;
+  border: 1px solid #333 !important;
+  border-radius: 22px !important;  /* Match your rounded style */
+  outline: none !important;
+  font-size: 16px !important;
+  box-shadow: none !important;
+  backdrop-filter: blur(5px) !important;
 }
 
-/* Fix any transparency issues */
-.bg-transparent,
-[class*="bg-opacity"] {
-  background-color: black !important;
+/* Clean placeholder styling */
+.chat-input-container > input:first-of-type::placeholder {
+  color: rgba(255, 255, 255, 0.7) !important;
+  opacity: 1 !important;
+}
+
+/* Focus state */
+.chat-input-container > input:first-of-type:focus {
+  border-color: #444 !important;
+  box-shadow: none !important;
+}
+
+/* Remove any overlays or additional input elements */
+.input-overlay,
+.input-backdrop,
+.input-decoration {
+  display: none !important;
+}
+
+/* Ensure the container doesn't have its own border */
+.chat-input-container {
+  border: none !important;
+  box-shadow: none !important;
 }
