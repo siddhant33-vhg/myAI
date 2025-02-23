@@ -24,50 +24,20 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
       <TooltipProvider>
-        <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-        >
+        <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
           {/* Chatbot Header */}
           <div className="chatbot-header">
-            <img
-              src="/profile-image.png" 
-              alt="Chatbot Profile"
-              className="chatbot-avatar"
-            />
+            <img src="/favicon.ico" alt="SynthAI" className="chatbot-avatar" />
             <span className="chatbot-name">SynthAI</span>
           </div>
 
           <main>
             <ErrorWrapper>{children}</ErrorWrapper>
           </main>
-        </body>
-      </TooltipProvider>
-    </html>
-  );
-}
-
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <html lang="en">
-      <TooltipProvider>
-        <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-        >
-          <div className="chatbot-header">
-            <img src="/favicon.ico" alt="SynthAI" className="chatbot-avatar" />
-            <span className="chatbot-name">SynthAI</span>
-          </div>
-          <ErrorWrapper>{children}</ErrorWrapper>
         </body>
       </TooltipProvider>
     </html>
