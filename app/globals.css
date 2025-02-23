@@ -282,3 +282,36 @@ input[type="text"], textarea {
   padding: 0 !important;
   background-color: black !important;
 }
+/* Fix input box overlapping issue */
+.input-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+  border-radius: 30px; /* Consistent rounded edges */
+  background-color: black !important;
+}
+
+.chat-input {
+  width: 100%;
+  padding: 12px 20px;
+  border-radius: 30px !important; /* Rounded edges */
+  border: none !important; /* Remove extra borders */
+  outline: none !important; /* Remove additional white outlines */
+  background-color: #222 !important;
+  color: white !important;
+  font-size: 16px;
+}
+
+/* Ensure send button aligns properly */
+.send-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+
+
+
+
