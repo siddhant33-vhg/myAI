@@ -66,6 +66,19 @@ main {
   border: 1px solid #333333 !important;
   pointer-events: none !important;
 }
+/* Fix input container padding */
+.chat-input-wrapper {
+  position: relative !important;
+  width: 90% !important;
+  max-width: 800px !important;
+  border-radius: 24px !important;
+  background: black !important;
+  border: 1px solid #333333 !important;
+  padding: 2px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
 
 .chat-input {
   width: 100% !important;
@@ -77,7 +90,19 @@ main {
   border-radius: 22px !important;
   font-size: 16px !important;
   outline: none !important;
+  text-align: center !important; /* Center the text */
 }
+
+/* Style the placeholder text */
+.chat-input::placeholder {
+  color: rgba(255, 255, 255, 0.7) !important;
+  text-align: center !important; /* Center the placeholder */
+  width: 100% !important;
+  position: absolute !important;
+  left: 0 !important;
+  right: 0 !important;
+}
+
 
 /* Footer */
 .footer {
