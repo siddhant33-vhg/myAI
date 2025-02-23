@@ -112,3 +112,34 @@ input, textarea {
 input::placeholder, textarea::placeholder {
   color: #aaa !important; /* Light gray for contrast */
 }
+
+/* Ensure chatbot name is visible */
+.chatbot-name {
+  color: white !important;  /* Ensures visibility */
+  font-weight: bold;
+  font-size: 18px;
+  text-shadow: 2px 2px 4px black !important; /* Adds shadow for contrast */
+  background-color: transparent !important;
+  padding: 4px 8px;
+  display: inline-block;
+}
+
+/* Ensure chatbot header is centered */
+.chatbot-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Chatbot Avatar */
+.chatbot-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid white;
+}
