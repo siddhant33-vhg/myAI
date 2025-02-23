@@ -1,7 +1,7 @@
 "use client";
+
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { useState } from "react";
 import { ArrowUp } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
@@ -27,8 +27,8 @@ export default function ChatInput({
   });
 
   return (
-    <div className="z-10 flex flex-col justify-center items-center fixed bottom-0 w-full p-5">
-      <div className="max-w-screen-lg w-full">
+    <div className="chat-input-container">
+      <div className="chat-input-wrapper">
         <Form {...form}>
           <form onSubmit={handleSubmit} className="flex w-full items-center gap-2">
             <FormField
@@ -41,7 +41,7 @@ export default function ChatInput({
                       {...field}
                       onChange={handleInputChange}
                       value={input}
-                      className="border-none bg-transparent"
+                      className="chat-input"
                       placeholder="Type your message here..."
                     />
                   </FormControl>
