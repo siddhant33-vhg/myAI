@@ -14,80 +14,61 @@ body, html {
   overflow-x: hidden !important;
 }
 
-/* Ensure all elements maintain black background */
-* {
+/* Fix the chat input container */
+.z-10.flex.flex-col.justify-center.items-center.fixed.bottom-0 {
   background-color: black !important;
-  color: white !important;
+  box-shadow: none !important;
+  border: none !important;
 }
 
-/* Chat Interface Container */
-.chat-container {
+/* Style the form */
+form.flex {
   background-color: black !important;
-  width: 100% !important;
-  height: 100% !important;
-  display: flex !important;
-  flex-direction: column !important;
-  justify-content: center !important;
-  align-items: center !important;
-}
-
-/* Chatbot name and header */
-.chatbot-name {
-  color: white !important;  
-  font-weight: bold !important;
-  font-size: 22px !important;
-  text-shadow: 3px 3px 8px black !important;
-  background-color: rgba(0, 0, 0, 0.8) !important;
-  padding: 8px 12px !important;
-  border-radius: 10px !important;
-  display: inline-block !important;
-}
-
-/* Message bubbles */
-.chat-bubble {
-  background-color: black !important;
-  color: white !important;
-  border-radius: 10px !important;
-  padding: 10px !important;
-  border: 1px solid #444 !important;
-}
-
-.user-message {
-  background-color: #0044cc !important;
-  color: white !important;
-  font-weight: bold !important;
-  border-radius: 10px !important;
-  padding: 10px !important;
-}
-
-/* Fix input box - simplified version */
-.chat-input-container {
-  background-color: black !important;
-  width: 100% !important;
-  padding: 10px !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  position: fixed !important;
-  bottom: 0 !important;
-}
-
-input[type="text"] {
-  width: 90% !important;
-  max-width: 800px !important;
-  padding: 12px 20px !important;
-  background-color: black !important;
-  color: white !important;
   border: 1px solid #333 !important;
-  border-radius: 22px !important;
-  font-size: 16px !important;
+  box-shadow: none !important;
 }
 
-/* Footer */
-.footer {
+/* Style the shadcn Input component */
+.border-none.focus-visible\:ring-0.focus-visible\:ring-offset-0.bg-transparent {
   background-color: black !important;
   color: white !important;
-  padding-bottom: 10px !important;
-  width: 100% !important;
-  text-align: center !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Remove any focus rings from the form */
+form.flex.ring-2,
+form.flex.ring-ring,
+form.flex.ring-offset-2 {
+  ring: 0 !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Style the button */
+button.rounded-full {
+  background-color: #333 !important;
+  color: white !important;
+  border: none !important;
+}
+
+button.rounded-full:hover {
+  background-color: #444 !important;
+}
+
+/* Fix any shadcn specific styles */
+[role="none"] {
+  background-color: black !important;
+}
+
+.FormItem,
+.FormControl {
+  background-color: transparent !important;
+}
+
+/* Ensure placeholder text is visible */
+input::placeholder {
+  color: rgba(255, 255, 255, 0.7) !important;
+  opacity: 1 !important;
 }
