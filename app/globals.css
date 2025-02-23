@@ -2,73 +2,113 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Base styles */
-body, html {
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: black !important;
-  color: white !important;
-  height: 100% !important;
-  width: 100% !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  overflow-x: hidden !important;
+/* Base dark theme */
+:root {
+  --background: black;
+  --text: white;
 }
 
-/* Fix the chat input container */
-.z-10.flex.flex-col.justify-center.items-center.fixed.bottom-0 {
-  background-color: black !important;
-  box-shadow: none !important;
+/* Ensure dark background everywhere */
+html, 
+body {
+  background-color: var(--background) !important;
+  color: var(--text) !important;
+  min-height: 100vh !important;
+}
+
+/* Force dark theme on all elements */
+* {
+  background-color: var(--background) !important;
+  color: var(--text) !important;
+}
+
+/* Main chat container */
+.chat-container {
+  background-color: var(--background) !important;
+  min-height: 100vh !important;
+  padding-bottom: 80px !important;
+}
+
+/* Single styled input container */
+.chat-input-container,
+.z-10.flex.flex-col {
+  background-color: var(--background) !important;
   border: none !important;
+  box-shadow: none !important;
+  position: fixed !important;
+  bottom: 0 !important;
+  width: 100% !important;
+  padding: 1rem !important;
+}
+
+/* Clean single input styling */
+.chat-input,
+input[type="text"],
+.border-none {
+  background-color: transparent !important;
+  border: 1px solid #333 !important;
+  border-radius: 9999px !important;
+  color: var(--text) !important;
+  width: 100% !important;
+  padding: 0.75rem 1rem !important;
+  outline: none !important;
+}
+
+/* Remove focus rings and shadows */
+.focus-visible\:ring-0,
+.focus-visible\:ring-offset-0,
+*:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  ring: 0 !important;
 }
 
 /* Style the form */
 form.flex {
-  background-color: black !important;
+  width: 100% !important;
+  max-width: 800px !important;
+  margin: 0 auto !important;
+  background-color: var(--background) !important;
+  border: none !important;
+  position: relative !important;
+}
+
+/* Footer styling */
+.footer {
+  background-color: var(--background) !important;
+  color: var(--text) !important;
+  border: none !important;
+  position: fixed !important;
+  bottom: 0 !important;
+  width: 100% !important;
+  padding: 0.5rem !important;
+  text-align: center !important;
+}
+
+/* Message bubble styling */
+.chat-bubble {
+  background-color: var(--background) !important;
   border: 1px solid #333 !important;
-  box-shadow: none !important;
-}
-
-/* Style the shadcn Input component */
-.border-none.focus-visible\:ring-0.focus-visible\:ring-offset-0.bg-transparent {
-  background-color: black !important;
-  color: white !important;
-  border: none !important;
-  outline: none !important;
-  box-shadow: none !important;
-}
-
-/* Remove any focus rings from the form */
-form.flex.ring-2,
-form.flex.ring-ring,
-form.flex.ring-offset-2 {
-  ring: 0 !important;
-  outline: none !important;
-  box-shadow: none !important;
-}
-
-/* Style the button */
-button.rounded-full {
-  background-color: #333 !important;
-  color: white !important;
-  border: none !important;
-}
-
-button.rounded-full:hover {
-  background-color: #444 !important;
-}
-
-/* Fix any shadcn specific styles */
-[role="none"] {
-  background-color: black !important;
-}
-
-.FormItem,
-.FormControl {
-  background-color: transparent !important;
+  border-radius: 1rem !important;
+  padding: 1rem !important;
+  margin: 0.5rem 0 !important;
 }
 
 /* Ensure placeholder text is visible */
-input::placeholder {
-  color: rgba(255, 255, 255, 0.7) !important;
+::placeholder {
+  color: rgba(255, 255, 255, 0.5) !important;
   opacity: 1 !important;
+}
+
+/* Remove any white backgrounds from shadcn components */
+.bg-white,
+.bg-background,
+[class*="bg-"] {
+  background-color: var(--background) !important;
+}
+
+/* Remove any shadows */
+.shadow-[0_-10px_15px_-2px_rgba(255,255,255,1)],
+[class*="shadow-"] {
+  box-shadow: none !important;
 }
