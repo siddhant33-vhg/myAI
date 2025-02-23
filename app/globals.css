@@ -1,114 +1,25 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+"use client";
 
-/* Base dark theme */
-:root {
-  --background: black;
-  --text: white;
-}
+import { Inter } from "next/font/google";
+import "./globals.css";
 
-/* Ensure dark background everywhere */
-html, 
-body {
-  background-color: var(--background) !important;
-  color: var(--text) !important;
-  min-height: 100vh !important;
-}
+const inter = Inter({ subsets: ["latin"] });
 
-/* Force dark theme on all elements */
-* {
-  background-color: var(--background) !important;
-  color: var(--text) !important;
-}
-
-/* Main chat container */
-.chat-container {
-  background-color: var(--background) !important;
-  min-height: 100vh !important;
-  padding-bottom: 80px !important;
-}
-
-/* Single styled input container */
-.chat-input-container,
-.z-10.flex.flex-col {
-  background-color: var(--background) !important;
-  border: none !important;
-  box-shadow: none !important;
-  position: fixed !important;
-  bottom: 0 !important;
-  width: 100% !important;
-  padding: 1rem !important;
-}
-
-/* Clean single input styling */
-.chat-input,
-input[type="text"],
-.border-none {
-  background-color: transparent !important;
-  border: 1px solid #333 !important;
-  border-radius: 9999px !important;
-  color: var(--text) !important;
-  width: 100% !important;
-  padding: 0.75rem 1rem !important;
-  outline: none !important;
-}
-
-/* Remove focus rings and shadows */
-.focus-visible\:ring-0,
-.focus-visible\:ring-offset-0,
-*:focus {
-  outline: none !important;
-  box-shadow: none !important;
-  ring: 0 !important;
-}
-
-/* Style the form */
-form.flex {
-  width: 100% !important;
-  max-width: 800px !important;
-  margin: 0 auto !important;
-  background-color: var(--background) !important;
-  border: none !important;
-  position: relative !important;
-}
-
-/* Footer styling */
-.footer {
-  background-color: var(--background) !important;
-  color: var(--text) !important;
-  border: none !important;
-  position: fixed !important;
-  bottom: 0 !important;
-  width: 100% !important;
-  padding: 0.5rem !important;
-  text-align: center !important;
-}
-
-/* Message bubble styling */
-.chat-bubble {
-  background-color: var(--background) !important;
-  border: 1px solid #333 !important;
-  border-radius: 1rem !important;
-  padding: 1rem !important;
-  margin: 0.5rem 0 !important;
-}
-
-/* Ensure placeholder text is visible */
-::placeholder {
-  color: rgba(255, 255, 255, 0.5) !important;
-  opacity: 1 !important;
-}
-
-/* Remove any white backgrounds from shadcn components */
-.bg-white,
-.bg-background,
-[class*="bg-"] {
-  background-color: var(--background) !important;
-}
-
-/* Remove any shadows */
-.shadow-[0_-10px_15px_-2px_rgba(255,255,255,1)],
-[class*="shadow-"] {
-  box-shadow: none !important;
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en">
+      <body 
+        className={`${inter.className} bg-black min-h-screen m-0 p-0`}
+        style={{ backgroundColor: 'black' }}
+      >
+        <div className="min-h-screen bg-black">
+          {children}
+        </div>
+      </body>
+    </html>
+  );
 }
