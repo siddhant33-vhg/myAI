@@ -2,27 +2,53 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Base styles */
-body, html {
-  font-family: Arial, Helvetica, sans-serif;
+/* Ensure black background everywhere */
+html, 
+body, 
+#root,
+#__next,
+main,
+.chat-container,
+.app-container {
   background-color: black !important;
   color: white !important;
-  height: 100% !important;
-  width: 100% !important;
+  min-height: 100vh !important;
   margin: 0 !important;
   padding: 0 !important;
-  overflow-x: hidden !important;
 }
 
-/* Reset any duplicate inputs */
-input[type="text"],
-textarea,
-.input-box,
-.chat-input {
-  display: none !important;
+/* Remove any gradients or background variations */
+* {
+  background-color: black !important;
 }
 
-/* Single chat input */
+/* Chat container specific styles */
+.chat-container {
+  display: flex !important;
+  flex-direction: column !important;
+  min-height: 100vh !important;
+  width: 100% !important;
+  padding-bottom: 100px !important;
+}
+
+/* Message bubbles */
+.chat-bubble {
+  background-color: black !important;
+  color: white !important;
+  border-radius: 10px !important;
+  padding: 10px !important;
+  border: 1px solid #444 !important;
+}
+
+.user-message {
+  background-color: #0044cc !important;
+  color: white !important;
+  font-weight: bold !important;
+  border-radius: 10px !important;
+  padding: 10px !important;
+}
+
+/* Input container */
 .chat-input-container {
   position: fixed !important;
   bottom: 32px !important;
@@ -39,7 +65,7 @@ textarea,
   z-index: 20 !important;
 }
 
-/* Primary input field - this is the only one that should show */
+/* Single input field */
 .chat-input-container input:first-of-type {
   display: block !important;
   width: 90% !important;
@@ -55,7 +81,7 @@ textarea,
   line-height: 24px !important;
 }
 
-/* Placeholder styling for the primary input */
+/* Placeholder text */
 .chat-input-container input:first-of-type::placeholder {
   color: rgba(255, 255, 255, 0.7) !important;
   line-height: 24px !important;
@@ -75,10 +101,29 @@ textarea,
   z-index: 10 !important;
 }
 
-/* Hide any duplicate input containers */
+/* Hide duplicate elements */
 .input-container,
 .chatbox-container,
 .chat-wrapper,
 .chatbox-wrapper {
   display: none !important;
+}
+
+/* Ensure no gradients in the interface */
+.gradient,
+.gradient-bg,
+[class*="gradient"] {
+  background: black !important;
+  background-image: none !important;
+}
+
+/* Fix any potential white borders or edges */
+* {
+  border-color: #333 !important;
+}
+
+/* Fix any transparency issues */
+.bg-transparent,
+[class*="bg-opacity"] {
+  background-color: black !important;
 }
