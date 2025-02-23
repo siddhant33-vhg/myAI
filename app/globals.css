@@ -183,3 +183,46 @@ input[type="text"], textarea {
 .chat-input-container::after {
   display: none !important;
 }
+
+/* Ensure the entire input section blends into the black background */
+.chat-input-container {
+  background-color: black !important;
+  border: none !important;
+  box-shadow: none !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw !important; /* Make it span the full screen */
+  padding: 0 !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+}
+
+/* Completely remove extra borders and shadow */
+input[type="text"], textarea {
+  background-color: black !important;
+  color: white !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  width: 100% !important; /* Adjusts full width inside its parent */
+  height: 40px !important; /* Set height for consistency */
+  padding: 12px 16px !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+}
+
+/* Ensure there are no gaps around the chat box */
+.chatbox-container {
+  background-color: black !important;
+  width: 100vw !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Remove any unwanted bottom spacing */
+.chat-input-container::after {
+  display: none !important;
+}
