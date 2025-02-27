@@ -53,7 +53,7 @@ async function determineIntention(chat: Chat): Promise<Intention> {
   });
 }
 
-// ✅ Make sure this is correctly placed at the bottom
+// ✅ Single Correct `POST` Function (Remove any duplicates)
 export async function POST(req: Request) {
   const { chat } = await req.json();
 
@@ -68,8 +68,8 @@ export async function POST(req: Request) {
     botResponse = await ResponseModule.respondToRandomMessage(chat, providers);
   }
 
-  // Log the chat conversation
-  await logChat(chat.message, botResponse); // Logs both user and bot messages
+  const botText = await botResponse.text(); // Convert response to text
+  await logChat(chat.message, botText); // Log user and bot messages
 
   return botResponse; // Finally, return the response
 }
