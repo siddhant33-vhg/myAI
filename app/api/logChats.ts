@@ -1,25 +1,31 @@
 import { NextRequest, NextResponse } from "next/server";
+import fs from "fs";
+import path from "path";
 
-// In-memory chat logs (Temporary storage, resets on redeploy)
-const chatLogs: { user: string; bot: string; timestamp: string }[] = [];
+const LOGS_FILE = path.join(process.cwd(), "chatLogs.json");
 
-/**
- * Function to log chat messages
- */
+// Function to log chat messages
 export async function logChat(userMessage: string, botMessage: string) {
-  const logEntry = {
-    user: userMessage,
-    bot: botMessage,
-    timestamp: new Date().toISOString(),
-  };
+  const logEntry = { user: userMessage, bot: botMessage, timestamp: new Date().toISOString() };
 
-  chatLogs.push(logEntry);
-  console.log("Chat logged successfully.");
+  try {
+    let logs = [];
+
+    if (fs.existsSync(LOGS_FILE)) {
+      const fileContent = fs.readFileSync(LOGS_FILE, "utf-8");
+      logs = JSON.parse(fileContent);
+    }
+
+    logs.push(logEntry);
+    fs.writeFileSync(LOGS_FILE, JSON.stringify(logs, null, 2));
+
+    console.log("Chat logged successfully.");
+  } catch (error) {
+    console.error("Error logging chat:", error);
+  }
 }
 
-/**
- * API route to log chats via HTTP request
- */
+// API route to log chats via HTTP request
 export async function POST(req: NextRequest) {
   try {
     const { userMessage, botResponse } = await req.json();
@@ -36,12 +42,15 @@ export async function POST(req: NextRequest) {
   }
 }
 
-/**
- * API route to fetch chat logs
- */
+// API route to fetch chat logs
 export async function GET() {
   try {
-    return NextResponse.json({ chatLogs });
+    if (fs.existsSync(LOGS_FILE)) {
+      const logs = fs.readFileSync(LOGS_FILE, "utf-8");
+      return NextResponse.json({ chatLogs: JSON.parse(logs) });
+    } else {
+      return NextResponse.json({ chatLogs: [] });
+    }
   } catch (error) {
     return NextResponse.json({ error: "Failed to fetch logs" }, { status: 500 });
   }
