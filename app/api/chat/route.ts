@@ -1,3 +1,4 @@
+import { logChat } from "../logChats"; 
 import { OpenAI } from "openai";
 import { Pinecone } from "@pinecone-database/pinecone";
 import { AIProviders, Chat, Intention } from "@/types";
@@ -57,11 +58,22 @@ export async function POST(req: Request) {
 
   const intention: Intention = await determineIntention(chat);
 
+ export async function POST(req: Request) {
+  const { chat } = await req.json();
+
+  const intention: Intention = await determineIntention(chat);
+  let botResponse;
+
   if (intention.type === "question") {
-    return ResponseModule.respondToQuestion(chat, providers, pineconeIndex);
+    botResponse = await ResponseModule.respondToQuestion(chat, providers, pineconeIndex);
   } else if (intention.type === "hostile_message") {
-    return ResponseModule.respondToHostileMessage(chat, providers);
+    botResponse = await ResponseModule.respondToHostileMessage(chat, providers);
   } else {
-    return ResponseModule.respondToRandomMessage(chat, providers);
+    botResponse = await ResponseModule.respondToRandomMessage(chat, providers);
   }
+
+  // Log the chat
+  await logChat(chat.message, botResponse); // Log the user message and bot response
+
+  return botResponse;
 }
