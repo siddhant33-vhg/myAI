@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 
 // In-memory storage (Replace with a database later)
-let chatLogs: { user: string; bot: string }[] = [];
+const chatLogs: { user: string; bot: string }[] = [];
 
 export async function POST(req: NextRequest) {
   try {
