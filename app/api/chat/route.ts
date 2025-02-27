@@ -53,16 +53,12 @@ async function determineIntention(chat: Chat): Promise<Intention> {
   });
 }
 
+// ✅ Make sure this is correctly placed at the bottom
 export async function POST(req: Request) {
   const { chat } = await req.json();
 
   const intention: Intention = await determineIntention(chat);
-
- export async function POST(req: Request) {
-  const { chat } = await req.json();
-
-  const intention: Intention = await determineIntention(chat);
-  let botResponse;
+  let botResponse; // Store the bot's response before returning
 
   if (intention.type === "question") {
     botResponse = await ResponseModule.respondToQuestion(chat, providers, pineconeIndex);
@@ -72,8 +68,8 @@ export async function POST(req: Request) {
     botResponse = await ResponseModule.respondToRandomMessage(chat, providers);
   }
 
-  // Log the chat
-  await logChat(chat.message, botResponse); // Log the user message and bot response
+  // Log the chat conversation
+  await logChat(chat.message, botResponse); // Logs both user and bot messages
 
-  return botResponse;
+  return botResponse; // Finally, return the response
 }
